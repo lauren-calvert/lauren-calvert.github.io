@@ -112,7 +112,6 @@ a { color: var(--forest); }
 .families-hero { background-image: url('../assets/images/family-hero.jpg'); }
 .nannies-hero { background-image: url('../assets/images/nannies-hero.jpg'); }
 .positions-hero { background-image: url('../assets/images/positions-hero.jpg'); }
-.blog-hero { background-image: url('../assets/images/journal-hero.jpg'); }
 .form-hero { min-height: 330px; background: var(--forest); }
 .form-hero::before { background: radial-gradient(circle at 80% 20%, rgba(191,215,234,.5), transparent 42%); }
 
@@ -121,7 +120,7 @@ a { color: var(--forest); }
 .section-dark { color: rgba(255,255,255,.8); background: var(--forest-dark); }
 .section-dark h2, .section-dark h3, .section-dark .eyebrow { color: #fff; }
 
-.feature-card, .job-card, .article-card, .form-card {
+.feature-card, .job-card, .form-card {
     height: 100%;
     padding: 2rem;
     background: var(--white);
@@ -172,10 +171,6 @@ a { color: var(--forest); }
 
 .job-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
 .job-details { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(53,86,111,.15); }
-.article-thumb { width: 100%; height: 210px; margin-bottom: 1.25rem; border-radius: 16px; object-fit: cover; }
-.article-body { max-width: 760px; font-size: 1.08rem; }
-.article-body h2, .article-body h3 { margin-top: 2.5rem; }
-.article-body img { max-width: 100%; height: auto; border-radius: 18px; }
 
 .cta-band { padding: 5rem 0; background: var(--sand); }
 .cta-band h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
@@ -213,6 +208,6 @@ a { color: var(--forest); }
     .hero-section { min-height: 500px; }
     .page-hero { min-height: 380px; }
     .navbar-brand img { width: 160px; }
-    .feature-card, .job-card, .article-card, .form-card { padding: 1.4rem; border-radius: 18px; }
+    .feature-card, .job-card, .form-card { padding: 1.4rem; border-radius: 18px; }
     .form-card { margin-top: -2rem; }
 }

@@ -7,14 +7,6 @@ collections:
   jobs:
     output: false
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-
-permalink: /journal/:title/
 markdown: kramdown
 
 exclude:
