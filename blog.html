@@ -1,0 +1,52 @@
+---
+title: Journal
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Practical guidance for families and professional caregivers from Imagine Care Nannies.">
+    <title>Journal | Imagine Care Nannies</title>
+    <link rel="icon" href="assets/images/imagine-care-logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Primary navigation">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/imagine-care-logo.png" alt="Imagine Care Nannies"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="for-families.html">For families</a></li><li class="nav-item"><a class="nav-link" href="for-nannies.html">For nannies</a></li><li class="nav-item"><a class="nav-link" href="positions.html">Open positions</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Journal</a></li><li class="nav-item"><a class="nav-link btn btn-primary nav-cta" href="inquiry.html">Family inquiry</a></li></ul></div>
+    </div>
+</nav>
+
+<header class="hero-section page-hero blog-hero"><div class="container"><div class="hero-content text-white"><span class="eyebrow">The Imagine Care journal</span><h1>Practical guidance for caring homes.</h1><p class="lead mt-3">Thoughtful notes for families and caregivers navigating childcare, employment, and life together.</p></div></div></header>
+
+<main>
+    <section class="section-pad">
+        <div class="container">
+            <div class="text-center mb-5"><span class="eyebrow">Latest articles</span><h2 class="display-5">Resources for the road ahead</h2></div>
+            <div class="row g-4">
+                {% for post in site.posts %}
+                <div class="col-lg-4">
+                    <article class="article-card">
+                        {% if post.image and post.image != "" %}<img class="article-thumb" src="{{ post.image }}" alt="{{ post.image_alt | escape }}">{% endif %}
+                        <span class="tag">{{ post.category }}</span>
+                        <h3 class="mt-3">{{ post.title }}</h3>
+                        <p class="text-secondary">{{ post.date | date: "%B %-d, %Y" }} · {{ post.reading_time }}</p>
+                        <p>{{ post.excerpt }}</p>
+                        <a class="btn btn-outline-primary" href="{{ post.url }}">Read article</a>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="cta-band text-center"><div class="container"><span class="eyebrow">Personal support</span><h2>Looking for care—not just reading about it?</h2><a class="btn btn-primary btn-lg mt-3" href="inquiry.html">Start a family inquiry</a></div></section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-lg-5"><img class="footer-logo mb-3" src="assets/images/imagine-care-logo.png" alt="Imagine Care Nannies"><p>Boutique nanny placements across North &amp; Central Alabama.</p></div><div class="col-6 col-lg-3"><h3 class="h5 text-white">Families</h3><a class="d-block mb-2" href="for-families.html">Our process</a><a class="d-block" href="inquiry.html">Family inquiry</a></div><div class="col-6 col-lg-3"><h3 class="h5 text-white">Caregivers</h3><a class="d-block mb-2" href="positions.html">Open positions</a><a class="d-block" href="application.html">Nanny application</a></div></div><div class="footer-bottom d-flex flex-wrap justify-content-between gap-2"><span>© <span data-year></span> Imagine Care LLC. All rights reserved.</span><span>Huntsville · Madison · Athens · Decatur</span></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="js/site.js"></script>
+</body>
+</html>

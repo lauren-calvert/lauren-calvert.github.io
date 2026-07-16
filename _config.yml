@@ -1,0 +1,17 @@
+title: Imagine Care Nannies
+description: Boutique nanny placement across North and Central Alabama.
+url: ""
+baseurl: ""
+
+collections:
+  jobs:
+    output: false
+
+permalink: /journal/:title/
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+

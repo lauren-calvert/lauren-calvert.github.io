@@ -1,0 +1,148 @@
+media:
+  input: assets/images/uploads
+  output: /assets/images/uploads
+  rename: safe
+  categories: [image]
+
+content:
+  - name: journal
+    label: Journal
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{title}.md"
+      field: create
+    view:
+      fields: [title, published, date, category]
+      primary: title
+      sort: [date, title]
+      search: [title, excerpt, category]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: post
+        hidden: true
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Audience
+        type: select
+        required: true
+        options:
+          values: [For families, For caregivers, Agency news]
+      - name: reading_time
+        label: Reading time
+        type: string
+        required: true
+        description: "Example: 5 min read"
+      - name: excerpt
+        label: Card summary
+        type: text
+        required: true
+        options:
+          minlength: 40
+          maxlength: 240
+      - name: image
+        label: Featured image
+        type: image
+        required: false
+      - name: image_alt
+        label: Featured image description
+        type: string
+        required: false
+        description: Describe the image for visitors using screen readers.
+      - name: published
+        label: Published
+        type: boolean
+        default: false
+      - name: body
+        label: Article body
+        type: rich-text
+        required: true
+
+  - name: jobs
+    label: Job postings
+    type: collection
+    path: _jobs
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, status, location, employment_type, featured]
+      primary: title
+      sort: [status, title, location]
+      search: [title, location, employment_type, summary]
+      default:
+        sort: status
+        order: asc
+    fields:
+      - name: title
+        label: Position title
+        type: string
+        required: true
+      - name: application_role
+        label: Application role code
+        type: string
+        required: true
+        pattern: "^[a-z0-9-]+$"
+        description: Lowercase words separated by hyphens, such as full-time-nanny.
+      - name: status
+        label: Status
+        type: select
+        required: true
+        options:
+          values: [Open, Draft, Filled]
+      - name: featured
+        label: Featured role
+        type: boolean
+        default: false
+      - name: label
+        label: Card label
+        type: string
+        required: false
+        description: "Example: Flexible schedule"
+      - name: location
+        label: Location
+        type: string
+        required: true
+      - name: employment_type
+        label: Employment type
+        type: select
+        required: true
+        options:
+          values: [Full-time, Part-time, Temporary, Seasonal, Overnight]
+      - name: schedule
+        label: Schedule summary
+        type: string
+        required: true
+        description: "Example: Weekday afternoons"
+      - name: compensation
+        label: Compensation
+        type: string
+        required: false
+        description: "Example: $23–$28 per hour"
+      - name: summary
+        label: Card summary
+        type: text
+        required: true
+        options:
+          minlength: 40
+          maxlength: 280
+      - name: body
+        label: Role details
+        type: rich-text
+        required: true
