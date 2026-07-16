@@ -59,7 +59,12 @@ a { color: var(--forest); }
 
 .navbar-nav { align-items: center; gap: .15rem; }
 .nav-link { color: var(--ink) !important; font-size: .92rem; font-weight: 650; }
-.nav-link:hover, .nav-link.active { color: var(--forest) !important; }
+.nav-link:hover { color: var(--forest-dark) !important; }
+.nav-link.active:not(.btn) {
+    color: var(--forest-dark) !important;
+    background: rgba(191, 215, 234, .55);
+    border-radius: 999px;
+}
 .dropdown-menu { background: var(--white); border: 0; border-radius: 14px; box-shadow: var(--shadow); }
 .dropdown-item { padding: .65rem 1rem; color: var(--ink); }
 .dropdown-item:hover { color: var(--forest-dark); background: var(--sage-soft); }
